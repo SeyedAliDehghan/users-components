@@ -1,0 +1,37 @@
+.Form{
+    width:50vw;
+}
+.Form form{
+    background-color:white;
+    border-radius: 5px;
+    border:2px solid #DDEEEE;
+    color:black;
+    padding:1rem;
+}
+form input{
+    border:2px solid #DDEEEE;
+    border-radius: 5px;
+}
+.topForm{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.submitBtn{
+    margin-top: 0.5rem;
+    background-color:#DDEEEE;
+    border:0;
+    outline: 0;
+    border-radius: 5px;
+    width:100%;
+    height:1.5rem;
+    transition: all 0.3s ease;
+}
+.submitBtn:hover{
+    cursor: pointer;
+    background-color:white;
+    border:2px solid #DDEEEE;
+    outline: 0;
+    border-radius: 5px;
+    height:1.5rem;
+}

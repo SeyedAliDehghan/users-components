@@ -1,23 +1,25 @@
 import logo from './logo.svg';
+import {useState} from 'react'
 import './App.css';
+import Table from './components/table/Table';
+import Form from './components/Form/Form';
+const usersList = [
+  { id: 1, firstName: "mamad", lastName: "mamadiani", job: "developer" },
+  { id: 2, firstName: "hashem", lastName: "babazade", job: "developer" },
+];
 
 function App() {
+const [users, setUsers] = useState(usersList);
+const [controlledUser, setControlledUser] = useState({firstName: "",lastName: "",job: ""});
+const [controller, setController]=useState(false);
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Table users={users} setUsers={setUsers} setControlledUser={setControlledUser} setController={setController}/>
+      {controller && <Form setController={setController} users={users} setUsers={setUsers} controlledUser={controlledUser} setControlledUser={setControlledUser}/>}
+      {/* <Form users={users} setUsers={setUsers} controlledUser={controlledUser} setControlledUser={setControlledUser}/> */}
+
     </div>
   );
 }
